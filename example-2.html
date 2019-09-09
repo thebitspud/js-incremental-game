@@ -61,7 +61,7 @@
 	</head>
 
 	<!-- The body element contains all the HTML elements that will appear on the page -->
-	<body onclick="updateResources()">
+	<body onload="updateResources()">
 		<!-- The number of pencils, pencil makers, and pencil sharpeners you currently have -->
 		<div id="resource-counts">
 			<img src="pencil.png" width="32" height="32"> &times; <span id="pencil-count">0</span>
@@ -71,7 +71,7 @@
 
 		<!-- The rate at which your pencil makers create additional pencils -->
 		<p><br>
-			<span id="pencils-per-second">+0</span>
+			<span id="pencils-per-second">+0.00</span>
 			<img src="pencil.png" width="12" height="12"> per second
 		</p><br>
 
