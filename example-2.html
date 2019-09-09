@@ -1,0 +1,108 @@
+<!-- An incremental game that can be played on the web -->
+<!-- Tutorial by James Zhong @ VikingsDev -->
+
+<!doctype html>
+
+<html lang="en">
+	<!-- The head element defines document metadata and initializes styles + scripts -->
+	<head>
+		<!-- The text displayed in the browser's title bar -->
+		<title>Pencil Clicker</title>
+
+		<!-- We will put some CSS in here to make the page look nice -->
+		<style>
+			/* Page setup */
+
+			body {
+				background-color: white;
+
+				color: black;
+				font-family: monospace;
+				font-size: 24px;
+
+				text-align: center
+			}
+
+			img { vertical-align: middle; }
+
+			p {
+				margin: 0;
+				font-size: 14px;
+			}
+
+			div#resource-counts span:not(:last-child) {
+				margin-right: 30px;
+			}
+
+			/* Modifying button properties to suit our needs */
+
+			button {
+				font-size: 32px;
+				cursor: pointer;
+
+				background: white;
+				border: 1px #888 solid;
+				
+				padding: 10px 15px;
+				outline: none;
+				margin: 0 5px 5px 0;
+			}
+
+			button:hover { background-color: #ddd; }
+
+			button:active { background-color: #bbb; }
+		</style>
+
+		<!-- The script element will contain the JavaScript code that runs the game -->
+		<script>
+			
+		</script>
+	</head>
+
+	<!-- The body element contains all the HTML elements that will appear on the page -->
+	<body onclick="updateResources()">
+		<!-- The number of pencils, pencil makers, and pencil sharpeners you currently have -->
+		<div id="resource-counts">
+			<img src="pencil.png" width="32" height="32"> &times; <span id="pencil-count">0</span>
+			<img src="pencil-maker.png" width="32" height="32"> &times; <span id="maker-count">0</span>
+			<img src="pencil-sharpener.png" width="32" height="32"> &times; <span id="sharpener-count">1</span>
+		</div>
+
+		<!-- The rate at which your pencil makers create additional pencils -->
+		<p><br>
+			<span id="pencils-per-second">+0</span>
+			<img src="pencil.png" width="12" height="12"> per second
+		</p><br>
+
+		<!-- Buttons for making pencils and buying things -->
+		<div>
+			<!-- Pencils -->
+			<button onclick="makePencils()">
+				<span id="pencils-per-click">+1</span>
+				<img src="pencil.png" width="64" height="64">
+			</button>
+
+			<p>Make more pencils<br>Cost: Free!</p><br>
+
+			<!-- Pencil Makers -->
+			<button onclick="buyPencilMaker()">+1
+				<img src="pencil-maker.png" width="64" height="64">
+			</button>
+
+			<p>Buy a pencil maker
+				<br>+0.25 <img src="pencil.png" width="12" height="12"> per second
+				<br>Cost: <span id="maker-cost">10</span> <img src="pencil.png" width="12" height="12">
+			</p><br>
+
+			<!-- Pencil Sharpeners -->
+			<button onclick="buyPencilSharpener()">+1
+				<img src="pencil-sharpener.png" width="64" height="64">
+			</button>
+
+			<p>Buy a pencil sharpener
+				<br>+1 <img src="pencil.png" width="12" height="12"> per click
+				<br>Cost: <span id="sharpener-cost">10</span> <img src="pencil.png" width="12" height="12">
+			</p>
+		</div>
+	</body>
+</html>
