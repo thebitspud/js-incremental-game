@@ -72,6 +72,7 @@
 				pencils += pencilSharpeners;
 
 				// Updating document HTML after each button press
+				// (x).toFixed denotes the number of digits to the right of the decimal that are represented
 				document.getElementById("pencil-count").innerHTML = pencils.toFixed(0);
 			}
 
@@ -111,7 +112,6 @@
 			function addPencils() {
 				// Adding pencils created by pencil makers (it's not as complex as it may seem at first)
 				pencils += pencilMakers * pencilsPerSec / ticksPerSecond;
-				// (x).toFixed denotes the number of digits to the right of the decimal that are represented
 				document.getElementById("pencil-count").innerHTML = pencils.toFixed(0);
 			}
 
@@ -163,7 +163,7 @@
 			</button>
 
 			<p>Buy a pencil maker
-				<br>+0.25 <img src="pencil.png" width="12" height="12"> per second
+				<br>+0.50 <img src="pencil.png" width="12" height="12"> per second
 				<br>Cost: <span id="maker-cost">10</span> <img src="pencil.png" width="12" height="12">
 			</p><br>
 
